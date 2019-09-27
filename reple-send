@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# cat "(+ 2 3)" >> ~/.config/reple/stream0
+
+mkdir -p ~/.config/reple/ # silently make ~/.config/slimee/
+touch ~/.config/reple/stream0 # make the file exist
+echo -n > ~/.config/reple/stream0 # make the file mostly empty
+
+echo $@ >> ~/.config/reple/stream0

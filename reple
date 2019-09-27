@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+getopts ':h' OPTION # get the options
+
+case "$OPTION" in #set the "op" variable to the highest number provided, or 0
+	h)
+		echo "Usage: reple <command>"
+esac
+		
+
+mkdir -p ~/.config/reple/ # silently make ~/.config/reple/
+touch ~/.config/reple/stream0 # make the file exist
+echo -n > ~/.config/reple/stream0 # make the file mostly empty
+
+tail -f ~/.config/reple/stream0 2> /dev/null | rlwrap $@
